@@ -1,6 +1,5 @@
 # 3D-Lidar-Scanner
 # Embedded Spatial Measurement System
-![Figure 1](https://cdn.discordapp.com/attachments/514241789478174727/1097062007657734174/IMG_7747.png)
 <p align="center">
   <img src="https://cdn.discordapp.com/attachments/514241789478174727/1097062007657734174/IMG_7747.png" alt="Embedded Spatial Measurement System" width="400"/>
 </p>
