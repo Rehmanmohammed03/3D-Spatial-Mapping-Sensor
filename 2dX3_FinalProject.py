@@ -1,4 +1,4 @@
-# Zayeed Ghori 
+# Zayeed Ghori
 
 import serial
 import math
@@ -16,6 +16,8 @@ increment = 250 # x-displacement steps(mm)
 num_inc = int(input("enter num:"))
 count=0
 while(count<num_inc):
+    
+    #Rehman Mohammed
     raw = s.readline()
     data = raw.decode("utf-8") # Decodes byte input from UART into string 
     data = data[0:-2] # Removes carriage return and newline from string
