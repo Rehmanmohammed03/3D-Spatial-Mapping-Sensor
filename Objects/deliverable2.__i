@@ -1,0 +1,8 @@
+-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c
+-fno-rtti -funsigned-char -fshort-enums -fshort-wchar
+-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Keil_v5/ARM/ARMCLANG/include
+-I./RTE/_Target_1
+-IC:/Users/zayee/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+-IC:/Users/zayee/AppData/Local/Arm/Packs/TexasInstruments/MSP432E4_DFP/3.2.6/Device/Include
+-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_ -D__MSP432E401Y__
+-o ./objects/deliverable2.o -MD "deliverable2.c"
