@@ -1,5 +1,7 @@
 # 3D-Lidar-Scanner
 # Embedded Spatial Measurement System
+![Figure 1](https://cdn.discordapp.com/attachments/514241789478174727/1097062007657734174/IMG_7747.png)
+
 
 The embedded spatial measurement system was designed and built using a time-of-flight sensor to acquire information about the area around it. A rotary mechanism was used to provide a 360-degree measurement of distance within a single vertical geometric plane (y-z), while fixed distance samples were integrated along the orthogonal axis (x-axis). Mapped spatial information was stored in onboard memory and later communicated to a personal computer or web application for reconstruction and graphical presentation.
 
