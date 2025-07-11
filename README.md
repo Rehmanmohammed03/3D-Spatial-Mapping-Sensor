@@ -1,41 +1,39 @@
-# 3D-Lidar-Scanner
-# Embedded Spatial Measurement System
-<p align="center">
-  <img src="https://cdn.discordapp.com/attachments/514241789478174727/1097062007657734174/IMG_7747.png" alt="Embedded Spatial Measurement System" width="400"/>
-</p>
+3D LiDAR Scanner
+Embedded Spatial Measurement System
+<p align="center"> <img src="https://cdn.discordapp.com/attachments/514241789478174727/1097062007657734174/IMG_7747.png" alt="Embedded Spatial Measurement System" width="400"/> </p>
+Overview
+This embedded spatial measurement system was designed and built using a time-of-flight (ToF) sensor to capture environmental data. A rotary mechanism enabled 360-degree distance measurements within a single vertical geometric plane (Y-Z), while additional readings were taken at fixed intervals along the orthogonal X-axis. Spatial data was stored in onboard memory and later transmitted to a computer or web application for reconstruction and visualization.
 
+Objective
+The primary goal was to develop a cost-effective and compact alternative to commercial LiDAR systems, which are often bulky and expensive. This project gave students hands-on experience with real-world data acquisition systems, including working with microcontrollers for data collection, processing, and communication.
 
+Project Methodology
+The project followed a design-test-build process supported by lectures, labs, and milestone-driven assignments. Key technical steps included:
 
-The embedded spatial measurement system was designed and built using a time-of-flight sensor to acquire information about the area around it. A rotary mechanism was used to provide a 360-degree measurement of distance within a single vertical geometric plane (y-z), while fixed distance samples were integrated along the orthogonal axis (x-axis). Mapped spatial information was stored in onboard memory and later communicated to a personal computer or web application for reconstruction and graphical presentation.
+Signal quantification: Determining the amplitude, frequency range, source, and impedance of the analog signal.
 
-## Objective
+Transducer selection/building: Choosing appropriate sensors (e.g., pressure, sound, temperature).
 
-The project was undertaken with the objective of creating a less expensive and smaller custom system suitable for indoor exploration and navigation, as commercial Light Detection and Ranging (LIDAR) equipment was deemed too expensive and bulky. The project was designed as a way for students to gain insight into how commercial/industrial data acquisition systems operate while gaining the capability to collect data using a microcontroller and process and communicate that data.
+Signal preconditioning: Amplifying, filtering, and level-shifting to prepare for ADC.
 
-## Project Approach
+Analog-to-Digital Conversion (ADC): Defining voltage range, resolution, and sampling frequency.
 
-The project involved a design-test-build approach, with lectures, studios, labs, and assigned work to complete the recommended milestones. The required tasks, corresponding to the steps illustrated in Figure 1, were:
+Data processing: Managing real-time data from the ADC for storage, analysis, and communication.
 
-- Quantifying the analog signal - range of amplitude, frequency, source, impedance (continuous signal)
-- Building/selecting the appropriate transducer - pressure, sound, temperature, etc.
-- Preconditioning the signal - amplifying, filtering, and/or level shifting to conform to ADC design
-- Analog-to-Digital Conversion (ADC) - determining voltage range (min, max), resolution, sampling frequency (discrete data)
-- Data processing - reading data from ADC and storing/processing/transmitting under time constraints to return to the ADC for the next conversion
-- Control/communication - implementing an algorithm that meets the objective with hardware and timing constraints.
+Control & communication: Implementing algorithms that operate within hardware and timing constraints.
 
-## Components
+System Components
+Core hardware included:
 
-Core components of the project included:
+A VL53L1X ToF sensor mounted on a stepper motor to scan planar distances.
 
-- Digital I/O
-- Momentary push button to start and stop the data acquisition process
-- Microcontroller
-- Other electronic components
+A microcontroller for control and communication via I2C.
 
-The project used the VL53L1X Time of Flight (ToF) sensor on a predesigned breakout board mounted to a stepper motor for measuring planar spatial distance. The sensor was rotated through 360 degrees while collecting measurements. The data sheet for the ToF sensor lists three distance modes: 136cm (4.5ft), 290cm (9.5ft), and 360cm (11.8ft), and selecting the mode was one of the design decisions that had to be made for the project implementation. All communication between the ToF sensor and the microcontroller was done using a serial interface (I2C).
+A momentary push button to start/stop data acquisition.
 
-For displacement, the stepper motor/time of flight sensor combo was moved manually, and readings were gathered at regular distances (e.g., every 30 cm). The assembly of these components was also considered as a part of the final design, which may have required minor construction with wood, plastic, 3D printing, Lego pieces, etc., for which the students were responsible.
+Supporting electronic components and structural materials (e.g., wood, 3D-printed parts, Lego).
 
-The resulting embedded system integrated measurement modalities and device control, allowing it to be used to map indoor environments, such as hallways, for use as a component of other systems (e.g., robotics navigation, autonomous drone, layout mapping, etc.).
+The VL53L1X sensor offers three distance modes—136 cm, 290 cm, and 360 cm—requiring thoughtful mode selection during implementation. The stepper motor rotated the sensor 360° for full planar scanning. To extend measurements across the X-axis, the assembly was manually repositioned (e.g., every 30 cm) and additional data was collected.
 
-
+Final Outcome
+The resulting embedded system successfully integrated sensor control, spatial measurement, and data communication, enabling it to map indoor spaces such as hallways. It can serve as a component in broader applications like robotic navigation, autonomous drone pathfinding, and environmental layout mapping.
