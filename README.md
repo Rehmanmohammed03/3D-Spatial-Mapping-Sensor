@@ -1,39 +1,81 @@
-3D LiDAR Scanner
-Embedded Spatial Measurement System
-<p align="center"> <img src="https://cdn.discordapp.com/attachments/514241789478174727/1097062007657734174/IMG_7747.png" alt="Embedded Spatial Measurement System" width="400"/> </p>
-Overview
-This embedded spatial measurement system was designed and built using a time-of-flight (ToF) sensor to capture environmental data. A rotary mechanism enabled 360-degree distance measurements within a single vertical geometric plane (Y-Z), while additional readings were taken at fixed intervals along the orthogonal X-axis. Spatial data was stored in onboard memory and later transmitted to a computer or web application for reconstruction and visualization.
+---
 
-Objective
-The primary goal was to develop a cost-effective and compact alternative to commercial LiDAR systems, which are often bulky and expensive. This project gave students hands-on experience with real-world data acquisition systems, including working with microcontrollers for data collection, processing, and communication.
+# 3D LiDAR Scanner
 
-Project Methodology
-The project followed a design-test-build process supported by lectures, labs, and milestone-driven assignments. Key technical steps included:
+### Embedded Spatial Measurement System
 
-Signal quantification: Determining the amplitude, frequency range, source, and impedance of the analog signal.
+## Overview
 
-Transducer selection/building: Choosing appropriate sensors (e.g., pressure, sound, temperature).
+This project is a custom built embedded spatial measurement system that functions as a low cost LiDAR style scanner. It uses a time of flight (ToF) distance sensor combined with a rotary scanning mechanism to capture environmental geometry.
 
-Signal preconditioning: Amplifying, filtering, and level-shifting to prepare for ADC.
+The system performs continuous 360 degree distance measurements within a single vertical plane (Y–Z). By manually repositioning the scanner at fixed intervals along the X axis, multiple planar scans are combined to reconstruct a three dimensional representation of the surrounding environment. Collected data is stored onboard and later transmitted to a computer or web application for visualization.
 
-Analog-to-Digital Conversion (ADC): Defining voltage range, resolution, and sampling frequency.
+## Motivation
 
-Data processing: Managing real-time data from the ADC for storage, analysis, and communication.
+Commercial LiDAR systems are often expensive, bulky, and inaccessible for students. The goal of this project was to design a compact and affordable alternative while gaining hands on experience with real world embedded sensing, motor control, and data acquisition systems.
 
-Control & communication: Implementing algorithms that operate within hardware and timing constraints.
+## System Architecture
 
-System Components
-Core hardware included:
+The system integrates sensing, motion control, and data handling into a single embedded platform.
 
-A VL53L1X ToF sensor mounted on a stepper motor to scan planar distances.
+### Hardware Components
 
-A microcontroller for control and communication via I2C.
+* **VL53L1X Time of Flight sensor** for distance measurements
+* **Stepper motor** for precise 360 degree planar scanning
+* **Microcontroller** for sensor interfacing, motor control, and communication
+* **Momentary push button** to start and stop data acquisition
+* **Structural components** including wood, 3D printed parts, and Lego elements
 
-A momentary push button to start/stop data acquisition.
+The VL53L1X sensor supports three distance modes, 136 cm, 290 cm, and 360 cm. Mode selection was based on range and resolution tradeoffs. The stepper motor rotates the sensor through a full sweep to capture planar distance data.
 
-Supporting electronic components and structural materials (e.g., wood, 3D-printed parts, Lego).
+## Scanning Methodology
 
-The VL53L1X sensor offers three distance modes—136 cm, 290 cm, and 360 cm—requiring thoughtful mode selection during implementation. The stepper motor rotated the sensor 360° for full planar scanning. To extend measurements across the X-axis, the assembly was manually repositioned (e.g., every 30 cm) and additional data was collected.
+1. The sensor is rotated 360 degrees to capture distance measurements within the Y–Z plane
+2. Distance data is sampled at fixed angular increments
+3. The system stores each scan in onboard memory
+4. The entire assembly is repositioned along the X axis at fixed intervals, such as every 30 cm
+5. Multiple planar scans are combined to reconstruct a 3D spatial map
 
-Final Outcome
-The resulting embedded system successfully integrated sensor control, spatial measurement, and data communication, enabling it to map indoor spaces such as hallways. It can serve as a component in broader applications like robotic navigation, autonomous drone pathfinding, and environmental layout mapping.
+## Firmware and Data Processing
+
+The embedded firmware is responsible for:
+
+* Controlling stepper motor motion and angular resolution
+* Managing I2C communication with the ToF sensor
+* Sampling and storing distance measurements
+* Handling user input for scan control
+* Preparing data for transmission to an external system
+
+Timing constraints, memory limitations, and sensor configuration were carefully managed to ensure reliable and repeatable measurements.
+
+## Results
+
+The system successfully generated three dimensional representations of indoor environments such as hallways. The resulting data demonstrates the feasibility of using low cost components to implement LiDAR style spatial scanning.
+
+## Applications
+
+This project serves as a foundation for more advanced spatial sensing systems, including:
+
+* Robotic navigation and obstacle detection
+* Autonomous drone path planning
+* Indoor mapping and environment reconstruction
+* Embedded perception systems
+
+## Future Improvements
+
+* Automate X axis movement using a linear actuator
+* Improve spatial resolution and noise filtering
+* Add real time visualization support
+* Integrate SLAM or point cloud processing pipelines
+
+## Technologies Used
+
+* Embedded C or C++
+* I2C communication
+* Stepper motor control
+* Time of Flight sensing
+* Embedded systems design
+
+---
+
+Just tell me.
