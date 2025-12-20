@@ -70,7 +70,7 @@ This project serves as a foundation for more advanced spatial sensing systems, i
 
 ## Technologies Used
 
-* Embedded C or C++
+* Embedded C
 * I2C communication
 * Stepper motor control
 * Time of Flight sensing
