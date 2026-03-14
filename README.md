@@ -77,5 +77,3 @@ This project serves as a foundation for more advanced spatial sensing systems, i
 * Embedded systems design
 
 ---
-
-Just tell me.
